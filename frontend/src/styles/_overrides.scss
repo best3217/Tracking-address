@@ -1,0 +1,608 @@
+///////// Navbar //////////
+.navbar {
+  padding: $navbar-padding;
+  border: none;
+  background: $body-bg;
+
+  .nav-link {
+    padding: 0;
+  }
+
+  .input-group {
+    width: 245px;
+    height: 45px;
+
+    .form-control {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-normal;
+      &::placeholder {
+        color: $base-middle-gray;
+      }
+    }
+  }
+}
+
+///////// Widget //////////
+.widget-p-none {
+  padding: 0;
+}
+
+.widget-p-sm {
+  padding: 16px;
+}
+
+.widget-p-md {
+  padding: 24px 24px;
+}
+
+.widget-p-lg {
+  padding: 24px 32px;
+}
+
+///////// Breadcrumbs //////////
+.breadcrumb {
+  margin: 8px 0 0;
+  padding: 0;
+  color: $text-color;
+  background-color: transparent;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+
+  a {
+    color: $base-dark-gray;
+  }
+}
+
+///////// Grid //////////
+.pl-grid-col {
+  padding-left: 12px;
+}
+.pr-grid-col {
+  padding-right: 12px;
+}
+.gutter > [class*='col-'] {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.pr-grid-row {
+  padding-right: 3px;
+}
+
+.pl-grid-row {
+  padding-left: 3px;
+}
+
+///////// Buttons //////////
+.btn {
+  padding: $button-padding;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semi-bold;
+
+  .btn-success,
+  .btn-info,
+  .btn-warning,
+  .btn-danger {
+    color: $white;
+  }
+}
+
+///////// Progress Bar //////////
+.progress-xs {
+  height: 6px;
+}
+
+
+///////// Dropdowns //////////
+.dropdown-toggle {
+  padding: 6px 12px 6px 6px;
+  border: 1px solid $base-middle-gray;
+  border-radius: 4px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $base-dark-gray;
+  background-color: $white;
+
+  &:hover {
+    background-color: $base-light-gray;
+  }
+  &:focus {
+    background-color: $white;
+  }
+}
+
+.show > .btn-secondary.dropdown-toggle {
+  color: $default;
+  background-color: $base-light-gray;
+
+  &:focus {
+    background-color: $base-light-gray;
+  }
+  &:active {
+    background-color: $base-light-gray;
+  }
+}
+
+
+.dropdown-menu {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  min-width: 100%;
+}
+
+.navbar-dropdown-toggle {
+  color: $text-color;
+  border: none;
+}
+
+.navbar-dropdown {
+  margin-top: 12px;
+  padding: 24px 16px;
+  box-shadow: $widget-shadow;
+  border: none;
+
+  .dropdown-item {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 13px 16px;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: $base-light-gray;
+    }
+
+    span {
+      margin-left: 8px;
+      font-size: $font-size-base;
+      font-weight: $font-weight-semi-bold;
+      color: $text-color;
+    }
+
+    p {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .logout-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    padding: 8px 16px;
+  }
+}
+
+.profile-dropdown {
+  @media (max-width: breakpoint-max(sm)) {
+    left: -160px;
+  }
+}
+
+///////// Headings //////////
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: $font-weight-semi-bold;
+}
+
+///////// Headilines //////////
+.headline-1 {
+  font-size: $headline-large;
+  font-weight: $font-weight-semi-bold;
+}
+
+.headline-2 {
+  font-size: $headline-medium;
+  font-weight: $font-weight-semi-bold;
+}
+
+.headline-3 {
+  font-size: $headline-small;
+  font-weight: $font-weight-semi-bold;
+}
+
+///////// Body fonts //////////
+.body-1 {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+}
+
+.body-2 {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semi-bold;
+}
+
+.body-3 {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+}
+
+.label {
+  font-size: $font-size-mini;
+  font-weight: $font-weight-normal;
+}
+
+.muted {
+  color: $base-dark-gray;
+}
+
+///////// Icons //////////
+
+.eva {
+  font-size: 24px;
+}
+
+.fa {
+  font-size: 24px;
+}
+
+///////// Tables //////////
+.react-bootstrap-table {
+  table {
+    overflow-x: auto;
+    width: 100%;
+  }
+}
+.widget-table-overflow {
+  width: 100%;
+  margin: 0 0 24px;
+
+  th:first-child,
+  td:first-child {
+    padding-left: 8px;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 24px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+}
+
+.table-bordered th {
+  background-color: $gray-300;
+}
+
+table > thead > tr > th {
+  border-top: none !important;
+  border-bottom-width: 1px !important;
+  text-transform: uppercase;
+}
+
+.table-striped {
+  thead {
+    th {
+      vertical-align: middle;
+      border: none;
+    }
+  }
+  tbody {
+    tr:nth-of-type(odd) {
+      background-color: $base-light-gray;
+    }
+    td {
+      border: none;
+    }
+  }
+}
+
+.table-hover {
+  tbody tr {
+    @include hover() {
+      background-color: $violet;
+      td {
+        color: white;
+      }
+    }
+  }
+}
+
+.pagination {
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-with-border {
+
+}
+
+.page-link {
+  padding: 4px 12px;
+  border: $pagination-border-width solid $pagination-border-color;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $pagination-hover-border-color;
+  }
+
+  &:focus {
+    z-index: 3;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.page-item {
+  margin-left: 16px;
+  margin-right: 16px;
+  &:first-child {
+    .page-link {
+      border: none;
+      margin-right: 80px;
+      font-size: 36px;
+      line-height: 1;
+
+      @media (max-width: breakpoint-max(md)) {
+        margin-right: 8px;
+      }
+    }
+  }
+  &:last-child {
+    .page-link {
+      margin-left: 80px;
+      border: none;
+      font-size: 36px;
+      line-height: 1;
+
+      @media (max-width: breakpoint-max(md)) {
+        margin-left: 8px;
+      }
+    }
+  }
+  @media (max-width: breakpoint-max(md)) {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+.pagination-borderless {
+  .page-item {
+    .page-link {
+      border: none;
+      color: $pagination-disabled-color;
+    }
+    &.active .page-link {
+      z-index: 3;
+      color: $violet;
+      background-color: transparent;
+      border: none;
+    }
+
+    &:first-child {
+      .page-link {
+        color: $violet;
+      }
+    }
+    &:last-child {
+      .page-link {
+        color: $violet;
+      }
+    }
+    &.disabled .page-link {
+      color: $pagination-disabled-color;
+      pointer-events: none;
+      cursor: auto;
+      background-color: $pagination-disabled-bg;
+      border-color: $pagination-disabled-border-color;
+    }
+  }
+}
+
+///////// Badges //////////
+.badge {
+  padding: 4px 8px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semi-bold;
+  color: $white;
+  border-radius: 4px;
+}
+
+///////// Checkboxes //////////
+.checkbox {
+  padding-left: 20px;
+  display: flex;
+  margin-bottom: 4px;
+}
+.checkbox label {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-left: 5px;
+}
+.checkbox label::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 0;
+  margin-left: -20px;
+  border: 1px solid $base-middle-gray;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.checkbox label::after {
+  display: inline-block;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  left: 0;
+  top: 0;
+  margin-left: -20px;
+  padding-left: 3px;
+  padding-top: 1px;
+  font-size: 11px;
+  color: #555555;
+}
+
+.checkbox input[type='checkbox']{
+  opacity: 0;
+  z-index: 1;
+}
+
+.checkbox input[type='checkbox']:disabled + label::before {
+  background-color: #eeeeee;
+  cursor: not-allowed;
+}
+
+.checkbox-primary input[type='checkbox']:checked + label::before {
+  background-color: $violet;
+  border-color: $violet;
+}
+.checkbox-primary input[type='checkbox']:checked + label::after {
+  color: #fff;
+}
+
+input[type='checkbox'].styled:checked + label:after {
+  top: 2px;
+  content: url("../components/Icons/checkmark.svg");
+}
+input[type='checkbox'] .styled:checked + label::before {
+  color: #fff;
+}
+input[type='checkbox'] .styled:checked + label::after {
+  color: #fff;
+}
+
+///////// Tabs //////////
+
+.nav-tabs {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  .nav-link {
+    margin-bottom: -$nav-tabs-border-width;
+    border: $nav-tabs-border-width solid transparent;
+    color: $base-dark-gray;
+    @include border-top-radius($nav-tabs-border-radius);
+
+    @include hover-focus() {
+      border-color: $nav-tabs-link-hover-border-color;
+    }
+
+    &.disabled {
+      color: $base-dark-gray;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    color: $violet;
+    background-color: $white;
+    border-color: transparent;
+    border-bottom: 2px solid $violet;
+  }
+
+  .nav-link:hover {
+    color: $violet;
+    border-color: transparent;
+    border-bottom: 2px solid $violet;
+    }
+}
+
+////////// Alerts /////////
+.alert {
+  border: none;
+  padding: 12px 36px 12px 16px;
+  color: $white;
+
+  .btn {
+    border: none;
+  }
+
+  button.close {
+    font-weight: $font-weight-thin;
+    font-size: 20px;
+    text-shadow: none;
+    opacity: 1;
+    color: #fff;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: auto;
+    right: 16px;
+    margin-left: 8px;
+
+    &.alert-transparent {
+      color: inherit;
+      opacity: 1;
+    }
+  }
+}
+
+///////// Notification button //////////
+.notification-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  color: $white;
+}
+
+///////// Toasts //////////
+
+.Toastify__toast-container {
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  width: auto;
+}
+.Toastify__toast {
+  background-color: transparent;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.Toastify__toast-body {
+  padding: 0;
+  width: 460px;
+}
+
+///////// React-Bootstrap-Table //////////
+
+///////// Other //////////
+
+.nav {
+  .dropdown-toggle {
+    background-color: transparent;
+  }
+}
+
+.dropdown-toggle::after {
+font-family: Line Awesome Free, sans-serif;
+content: "\F107";
+border: none;
+width: auto;
+height: auto;
+vertical-align: baseline;
+font-size: 85%;
+font-weight: 600;
+
+@media (max-width: breakpoint-max(xs)) {
+  display: none;
+  }
+}
