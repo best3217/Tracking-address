@@ -25,7 +25,8 @@ const Layout = (props) => {
         <main className={s.content}>
           <Breadcrumbs url={props.location.pathname} />
           <Switch>
-            <Route path="/template" exact component={Address} />
+            <Route path="/" exact component={Address} />
+            <Route path="/template/address" exact component={Address} />
             <Route path='*' exact render={() => <Redirect to="/error" />} />
           </Switch>
         </main>

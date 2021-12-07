@@ -36,9 +36,6 @@ const Address = function () {
   const [TableCurrentPage, setTableCurrentPage] = useState(0);
   const [addresses, setAddresses] = useState([]);
   const [modal, setModal] = React.useState(false);
-  
-    // Toggle for Modal
-    const toggle = () => setModal(!modal);
 
   const [address, setAddress] = useState('');
   const [comment, setComment] = useState('');
@@ -53,6 +50,8 @@ const Address = function () {
     hideProgressBar: true,
     position: toast.POSITION.TOP_RIGHT,
   };
+
+  const toggle = () => setModal(!modal);
 
   const setTablePage = (e, index) => {
     e.preventDefault();
@@ -109,7 +108,7 @@ const Address = function () {
         toggle={() => { setOpen(!open) }}
       >
         <DropdownToggle nav>
-          <img className="d-none d-sm-block" src={moreIcon} alt="More ..."/>
+          <img src={moreIcon} alt="More ..."/>
         </DropdownToggle>
         <DropdownMenu >
           <DropdownItem>
@@ -140,11 +139,11 @@ const Address = function () {
                   <Table className={`table-striped table-borderless table-hover ${s.statesTable}`} responsive>
                     <thead>
                     <tr>
-                      <th />
                       <th className="w-25">ADDRESS</th>
                       <th className="w-25">BALANCE</th>
                       <th className="w-25">COMMENT</th>
                       <th className="w-25">NOTE</th>
+                      <th />
                     </tr>
                     </thead>
                     <tbody>
@@ -155,13 +154,13 @@ const Address = function () {
                       )
                       .map(item => (
                         <tr key={uuidv4()} id={item.id}>
-                          <td>
-                            <MutiSelector id={item.id} />
-                          </td>
                           <td>{item.address}</td>
                           <td>{item.balance}</td>
                           <td>{item.comment}</td>
                           <td>{item.note}</td>
+                          <td>
+                            <MutiSelector id={item.id} />
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -215,7 +214,7 @@ const Address = function () {
                   />
                 </FormGroup>
                 <Row>
-                  <Col>
+                  <Col md={6}>
                     <FormGroup>
                       <FormText className="mb-1">Comment</FormText>
                       <Input 
@@ -230,7 +229,7 @@ const Address = function () {
                       />
                     </FormGroup>
                   </Col>
-                  <Col>
+                  <Col md={6}>
                     <FormGroup>
                       <FormText className="mb-1">Note</FormText>
                       <Input 
@@ -248,6 +247,9 @@ const Address = function () {
               </Row>
             </ModalBody>
             <ModalFooter>
+              <Button color="secondary" onClick={() => {setModal(false)}}>
+                Cancel
+              </Button>
               <Button color="primary">
                 Submit
               </Button>

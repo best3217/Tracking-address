@@ -36,7 +36,7 @@ const Sidebar = (props) => {
           header="Address"
           isHeader
           iconName={<i className={'eva eva-grid-outline'}/>}
-          link="/template"
+          link="/template/address"
           index="Address"
         />
       </ul>
