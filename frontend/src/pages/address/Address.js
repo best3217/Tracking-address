@@ -28,11 +28,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Widget from "../../components/Widget/Widget.js";
 import * as Icons from "@material-ui/icons";
 import moreIcon from "../../assets/tables/moreIcon.svg";
-
 import s from "./Tables.module.scss";
 
 const Address = function () {
-
+  const baseURL = process.env.REACT_APP_BASEURL;
   const [TableCurrentPage, setTableCurrentPage] = useState(0);
   const [addresses, setAddresses] = useState([]);
   const [modal, setModal] = React.useState(false);
@@ -59,7 +58,7 @@ const Address = function () {
   }
 
   const getAddress = async () => {
-    const response = await axios.get('http://localhost:5000/token');
+    const response = await axios.get(`${ baseURL }/token`);
     setAddresses(response.data);
   }
 
@@ -97,7 +96,7 @@ const Address = function () {
     const[open, setOpen] = useState();
 
     const deleteAddress = async (id) => {
-      await axios.delete(`http://localhost:5000/token/${id}`);
+      await axios.delete(`${ baseURL }/token/${id}`);
       getAddress();
     }
 

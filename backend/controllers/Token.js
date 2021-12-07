@@ -24,11 +24,11 @@ export const createToken = async (req, res) => {
 
 // const trankingAddress = async (address) => {
 //     const cli = new NBXClient({
-//         uri: 'https://nbx.example.com',
-//         cryptoCode: 'btc',
+//         uri: 'http://89.47.166.94:24444',
+//         cryptoCode: 'ltc',
 //         address: address,
 //       });
-//       await cli.track();
+//       await cli.getStatus();
 // }
  
 export const updateToken = async (req, res) => {
