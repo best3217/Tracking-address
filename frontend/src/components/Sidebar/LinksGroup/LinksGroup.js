@@ -10,14 +10,6 @@ import s from "./LinksGroup.module.scss";
 const LinksGroup = (props) => {
 
   const {
-    link = "",
-    childrenLinks = null,
-    header = "",
-    classname = "",
-    isHeader = false,
-    deep = 0,
-    activeItem = "",
-    label = "",
     exact = true
   } = props;
 

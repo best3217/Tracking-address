@@ -39,7 +39,22 @@ export const updateToken = async (req, res) => {
             }
         });
         res.json({
-            "message": "Product Updated"
+            "message": "Address Updated"
+        });
+    } catch (error) {
+        res.json({ message: error.message });
+    }  
+}
+
+export const deleteToken = async (req, res) => {
+    try {
+        await Token.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json({
+            "message": "Address Deleted"
         });
     } catch (error) {
         res.json({ message: error.message });

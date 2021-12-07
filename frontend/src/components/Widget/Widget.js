@@ -10,7 +10,6 @@ const Widget = (props) => {
     className = '',
     headerClass = '',
     children = [],
-    options = {},
     ...restProps
   } = props;
 

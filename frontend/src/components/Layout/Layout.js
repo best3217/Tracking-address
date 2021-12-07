@@ -11,13 +11,7 @@ import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import Footer from "../Footer/Footer";
 import Breadcrumbs from "../Breadbrumbs/Breadcrumbs";
-import Dashboard from "../../pages/dashboard/Dashboard";
-import Typography from "../../pages/typography/Typography";
-import Notifications from "../../pages/notifications/Notifications";
 import Address from "../../pages/address/Address";
-import Charts from "../../pages/uielements/charts/Charts";
-import Icons from "../../pages/uielements/icons/IconsPage";
-import Maps from "../../pages/uielements/maps/google/GoogleMapPage";
 
 // -- Component Styles
 import s from "./Layout.module.scss";
@@ -31,15 +25,7 @@ const Layout = (props) => {
         <main className={s.content}>
           <Breadcrumbs url={props.location.pathname} />
           <Switch>
-            <Route path="/template" exact render={() => <Redirect to="template/dashboard"/>} />
-            <Route path="/template/dashboard" exact component={Dashboard}/>
-            <Route path="/template/typography" exact component={Typography} />
-            <Route path="/template/address" exact component={Address} />
-            <Route path="/template/notifications" exact component={Notifications} />
-            <Route path="/template/ui-elements" exact render={() => <Redirect to={"/template/ui-elements/charts"} />} />
-            <Route path="/template/ui-elements/charts" exact component={Charts} />
-            <Route path="/template/ui-elements/icons" exact component={Icons} />
-            <Route path="/template/ui-elements/maps" exact component={Maps} />
+            <Route path="/template" exact component={Address} />
             <Route path='*' exact render={() => <Redirect to="/error" />} />
           </Switch>
         </main>

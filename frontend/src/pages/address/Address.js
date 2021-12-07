@@ -17,11 +17,17 @@ import {
   FormGroup,
   FormText,
   Input,
+  Dropdown,
+  DropdownMenu,
+  DropdownToggle,
+  DropdownItem,
 } from "reactstrap";
 import Notification from "../../components/Notification/Notification.js";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Widget from "../../components/Widget/Widget.js";
 import * as Icons from "@material-ui/icons";
+import moreIcon from "../../assets/tables/moreIcon.svg";
 
 import s from "./Tables.module.scss";
 
@@ -29,7 +35,10 @@ const Address = function () {
 
   const [TableCurrentPage, setTableCurrentPage] = useState(0);
   const [addresses, setAddresses] = useState([]);
-  const [modalShow, setmodalShow] = useState(false);
+  const [modal, setModal] = React.useState(false);
+  
+    // Toggle for Modal
+    const toggle = () => setModal(!modal);
 
   const [address, setAddress] = useState('');
   const [comment, setComment] = useState('');
@@ -55,15 +64,6 @@ const Address = function () {
     setAddresses(response.data);
   }
 
-  const handleClose = () => {
-    setmodalShow(false);
-  }
-
-  const handleShow = (e) => {
-    e.preventDefault();
-    setmodalShow(true);
-  }
-
   const createAddress = async (e) => {
     e.preventDefault();
     await axios.post('http://localhost:5000/token',{
@@ -71,10 +71,10 @@ const Address = function () {
         comment: comment,
         note: note,
     }).then(function(res) {
-        if(res.status == 200) {
-          toast(<Notification type={'success'} withIcon msg={res.data.message} />, options);
+        if(res.status === 200) {
+          toast(<Notification type={'success'} msg={res.data.message} />, options)
           getAddress();
-          setmodalShow(false);
+          setModal(false);
           setAddress('');
           setComment('');
           setNote('');
@@ -84,9 +84,44 @@ const Address = function () {
     })
   }
 
+  const handleShow = (e) => {
+    e.preventDefault();
+    setModal(true);
+  }
+
   useEffect(() => {
     getAddress();
   }, []);
+
+  const MutiSelector = (props) => {
+    const { id } = props;
+    const[open, setOpen] = useState();
+
+    const deleteAddress = async (id) => {
+      await axios.delete(`http://localhost:5000/token/${id}`);
+      getAddress();
+    }
+
+    return (
+      <Dropdown
+        id={id}
+        isOpen={open}
+        toggle={() => { setOpen(!open) }}
+      >
+        <DropdownToggle nav>
+          <img className="d-none d-sm-block" src={moreIcon} alt="More ..."/>
+        </DropdownToggle>
+        <DropdownMenu >
+          <DropdownItem>
+            <div>Edit</div>
+          </DropdownItem>
+          <DropdownItem>
+            <div onClick={() => deleteAddress(id)}>Delete</div>
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+      )
+  }
 
   return (
     <div>
@@ -96,7 +131,7 @@ const Address = function () {
             <Col>
               <Widget>
                 <div className={s.tableTitle}>
-                  <div className="headline-2">States Colors</div>
+                  <div className="headline-2">Address Lists</div>
                   <div className="d-flex">
                     <a href="#" onClick={ e => handleShow(e) } title="Add Address"><Icons.AddCircleOutline /></a>
                   </div>
@@ -105,6 +140,7 @@ const Address = function () {
                   <Table className={`table-striped table-borderless table-hover ${s.statesTable}`} responsive>
                     <thead>
                     <tr>
+                      <th />
                       <th className="w-25">ADDRESS</th>
                       <th className="w-25">BALANCE</th>
                       <th className="w-25">COMMENT</th>
@@ -119,6 +155,9 @@ const Address = function () {
                       )
                       .map(item => (
                         <tr key={uuidv4()} id={item.id}>
+                          <td>
+                            <MutiSelector id={item.id} />
+                          </td>
                           <td>{item.address}</td>
                           <td>{item.balance}</td>
                           <td>{item.comment}</td>
@@ -157,7 +196,7 @@ const Address = function () {
         </Col>
       </Row>
 
-      <Modal size="lg" isOpen={modalShow}>
+      <Modal size="lg" isOpen={modal} toggle={toggle}>    
           <form onSubmit={createAddress}>
             <ModalHeader>
               {/* <Modal.Title>Modal heading</Modal.Title> */}
@@ -209,9 +248,6 @@ const Address = function () {
               </Row>
             </ModalBody>
             <ModalFooter>
-              <Button color="secondary" onClick={handleClose}>
-                Close
-              </Button>
               <Button color="primary">
                 Submit
               </Button>

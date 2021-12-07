@@ -15,13 +15,6 @@ const typesIcons = {
   error: dangerIcon,
 }
 
-const notificationMessages = {
-  info: "<span class='body-2'>Info:</span> This alert needs your attention, but it's not important.",
-  warning: "<span class='body-2'>Warning:</span> Best check yourself, you're not looking too good.",
-  success: "<span class='body-2'>Success:</span> Your request is success.",
-  error: "<span class='body-2'>Danger:</span> Danger: Change this and that and try again.",
-}
-
 const colors = {
   info: "#00A5FF",
   warning: "#FFA100",
