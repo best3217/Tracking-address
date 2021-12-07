@@ -19,7 +19,7 @@ const ErrorPage = () => {
         <p className={s.errorHelp}>
           But we're here to bring you back to safety
         </p>
-        <Link to="/template">
+        <Link to="/template/address">
           <Button className={`${s.errorBtn} rounded-pill`} type="submit" color="secondary-red">
             Back to Home
           </Button>
