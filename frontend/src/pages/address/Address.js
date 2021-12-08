@@ -64,7 +64,7 @@ const Address = function () {
 
   const createAddress = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/token',{
+    await axios.post(`${ baseURL }/token`,{
         address: address,
         comment: comment,
         note: note,
