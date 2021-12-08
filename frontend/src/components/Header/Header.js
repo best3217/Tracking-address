@@ -14,18 +14,12 @@ import {
   FormGroup,
 } from "reactstrap";
 
-import { logoutUser } from "../../actions/auth";
 import SearchBarIcon from "../Icons/HeaderIcons/SearchBarIcon";
 import MenuIcon from "../Icons/HeaderIcons/MenuIcon";
-import logoutIcon from "../../assets/navbarMenus/pfofileIcons/logoutOutlined.svg";
 import s from "./Header.module.scss";
 import "animate.css";
 
 const Header = (props) => {
-
-  const doLogout = () => {
-    props.dispatch(logoutUser());
-  }
 
   const toggleSidebar = () => {
     if (props.sidebarOpened) {
@@ -60,7 +54,6 @@ const Header = (props) => {
           </InputGroup>
         </FormGroup>
       </Form>
-      <button className="btn btn-primary rounded-pill logout-btn" onClick={() => doLogout()}><img src={logoutIcon} alt="Logout"/><span className="ml-1">Logout</span></button>
     </Navbar>
   )
 }

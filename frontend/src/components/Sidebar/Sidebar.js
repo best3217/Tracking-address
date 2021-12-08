@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -25,7 +26,8 @@ const Sidebar = (props) => {
   return (
     <nav className={cn(s.root, {[s.sidebarOpen]: burgerSidebarOpen})} >
       <header className={s.logo}>
-        <SofiaLogo/>
+        <img src="./logo.jpg" width="35" height="35" />
+        {/* <SofiaLogo/> */}
         <span className={s.title}>Traking Address</span>
       </header>
       <ul className={s.nav}>

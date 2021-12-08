@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import Footer from "../Footer/Footer";
-import Breadcrumbs from "../Breadbrumbs/Breadcrumbs";
 import Address from "../../pages/address/Address";
 
 // -- Component Styles
@@ -23,7 +22,6 @@ const Layout = (props) => {
         <Header />
         <Sidebar />
         <main className={s.content}>
-          <Breadcrumbs url={props.location.pathname} />
           <Switch>
             <Route path="/" exact component={Address} />
             <Route path="/template/address" exact component={Address} />
