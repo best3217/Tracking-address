@@ -26,9 +26,8 @@ export const createToken = async (req, res) => {
 //     const cli = new NBXClient({
 //         uri: 'http://89.47.166.94:24444',
 //         cryptoCode: 'ltc',
-//         address: address,
 //       });
-//       await cli.getStatus();
+//     const healthCheckResponse = await cli.healthCheck();
 // }
  
 export const updateToken = async (req, res) => {

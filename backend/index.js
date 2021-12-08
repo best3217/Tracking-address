@@ -16,4 +16,4 @@ app.use(cors());
 app.use(express.json());
 app.use('/token', productRoutes);
  
-app.listen(5000, () => console.log('Server running at port 5000'));
+app.listen(8080, () => console.log('Server running at port 8080'));
